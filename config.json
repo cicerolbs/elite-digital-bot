@@ -1,0 +1,38 @@
+{
+  "generalChatId": "1360685822923243560",
+  "adminRoleId": "1365086041270124665",
+  "pointsPerMessage": 1,
+  "messageCooldownSeconds": 30,
+  "voiceConfig": {
+    "studyChannelIds": [
+      "1390779199907692635",
+      "1360685824085069857",
+      "1392285080189141112",
+      "1392285154252427294",
+      "1360719867480772781"
+    ],
+    "socialChannelIds": [
+      "1360719533949587647",
+      "1360718947153871099",
+      "1360719116821860372",
+      "1360719729475719198"
+    ],
+    "pointsPerHour": {
+      "study": 100,
+      "social": 50
+    },
+    "updateIntervalMinutes": 5
+  },
+  "mysteryBox": {
+    "enabled": true,
+    "channelId": "1360685822923243560",
+    "intervalHours": 1,
+    "reward": {
+      "min": 10,
+      "max": 100
+    }
+  },
+  "giveawayConfig": {
+    "pointsPerEntry": 1200
+  }
+}
