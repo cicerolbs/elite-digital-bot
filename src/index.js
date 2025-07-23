@@ -68,8 +68,11 @@ client.login(process.env.DISCORD_TOKEN);
 
 // --- SEÇÃO 7: SISTEMA DE CAIXA MISTERIOSA ---
 if (config.mysteryBox.enabled) {
-    // ESTA É A LINHA CORRETA PARA PRODUÇÃO (executa a cada X horas, das 14h às 22h)
-    const cronString = `0 */${config.mysteryBox.intervalHours || 1} 14-22 * * *`;
+    // A sintaxe do pacote `cron` utiliza seis campos (segundo, minuto, hora...).
+    // O formato anterior utilizava o intervalo em minutos por engano, causando
+    // execuções a cada minuto. Agora definimos o intervalo no campo de horas,
+    // mantendo as execuções somente entre 14h e 22h.
+    const cronString = `0 0 14-22/${config.mysteryBox.intervalHours || 1} * * *`;
 
     const scheduledMessage = new cron.CronJob(cronString, async () => {
         if (client.mysteryBoxStatus.active) {
